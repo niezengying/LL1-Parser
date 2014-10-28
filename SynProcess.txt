@@ -1,0 +1,148 @@
+LL(1)预测分析过程如下所示:
+
+
+$ EE 
+     Input: (
+     Action: EE -> TT AA EE'
+
+$ EE' AA TT 
+     Input: (
+     Action: TT -> FF BB
+
+$ EE' AA BB FF 
+     Input: (
+     Action: FF -> ( EE )
+
+$ EE' AA BB ) EE ( 
+     Input: (
+     Action: Match
+
+$ EE' AA BB ) EE 
+     Input: i
+     Action: EE -> TT AA EE'
+
+$ EE' AA BB ) EE' AA TT 
+     Input: i
+     Action: TT -> FF BB
+
+$ EE' AA BB ) EE' AA BB FF 
+     Input: i
+     Action: FF -> i
+
+$ EE' AA BB ) EE' AA BB i 
+     Input: i
+     Action: Match
+
+$ EE' AA BB ) EE' AA BB 
+     Input: +
+     Action: BB -> @
+
+$ EE' AA BB ) EE' AA 
+     Input: +
+     Action: AA -> + TT AA
+
+$ EE' AA BB ) EE' AA TT + 
+     Input: +
+     Action: Match
+
+$ EE' AA BB ) EE' AA TT 
+     Input: i
+     Action: TT -> FF BB
+
+$ EE' AA BB ) EE' AA BB FF 
+     Input: i
+     Action: FF -> i
+
+$ EE' AA BB ) EE' AA BB i 
+     Input: i
+     Action: Match
+
+$ EE' AA BB ) EE' AA BB 
+     Input: )
+     Action: BB -> @
+
+$ EE' AA BB ) EE' AA 
+     Input: )
+     Action: AA -> @
+
+$ EE' AA BB ) EE' 
+     Input: )
+     Action: EE' -> @
+
+$ EE' AA BB ) 
+     Input: )
+     Action: Match
+
+$ EE' AA BB 
+     Input: *
+     Action: BB -> * FF BB
+
+$ EE' AA BB FF * 
+     Input: *
+     Action: Match
+
+$ EE' AA BB FF 
+     Input: i
+     Action: FF -> i
+
+$ EE' AA BB i 
+     Input: i
+     Action: Match
+
+$ EE' AA BB 
+     Input: *
+     Action: BB -> * FF BB
+
+$ EE' AA BB FF * 
+     Input: *
+     Action: Match
+
+$ EE' AA BB FF 
+     Input: *
+     	Syntax error :  3  :  POP unpredicted token -> *
+	Action: BB -> * FF BB
+
+$ EE' AA BB FF * 
+     Input: *
+     Action: Match
+
+$ EE' AA BB FF 
+     Input: i
+     Action: FF -> i
+
+$ EE' AA BB i 
+     Input: i
+     Action: Match
+
+$ EE' AA BB 
+     Input: *
+     Action: BB -> * FF BB
+
+$ EE' AA BB FF * 
+     Input: *
+     Action: Match
+
+$ EE' AA BB FF 
+     Input: i
+     Action: FF -> i
+
+$ EE' AA BB i 
+     Input: i
+     Action: Match
+
+$ EE' AA BB 
+     Input: i
+     	Syntax error :  4  :  SCAN unpredicted token -> i
+	Action: BB -> @
+
+$ EE' AA 
+     Input: $
+     Action: AA -> @
+
+$ EE' 
+     Input: $
+     Action: EE' -> @
+
+$ 
+     Input: $
+     Accept

@@ -1,0 +1,55 @@
+LL(1)分析表如下：
+1
+  Vn: EE				Vt: a				Action: scan
+  Vn: EE				Vt: @				Action: scan
+  Vn: EE				Vt: +				Action: scan
+  Vn: EE				Vt: *				Action: scan
+  Vn: EE				Vt: (				Action: EE ->   TT   AA   EE' 
+  Vn: EE				Vt: )				Action: pop
+  Vn: EE				Vt: i				Action: EE ->   TT   AA   EE' 
+  Vn: EE				Vt: $				Action: pop
+2
+  Vn: EE'				Vt: a				Action: EE' ->   a   EE' 
+  Vn: EE'				Vt: @				Action: scan
+  Vn: EE'				Vt: +				Action: scan
+  Vn: EE'				Vt: *				Action: scan
+  Vn: EE'				Vt: (				Action: scan
+  Vn: EE'				Vt: )				Action: EE' -> @
+  Vn: EE'				Vt: i				Action: scan
+  Vn: EE'				Vt: $				Action: EE' -> @
+3
+  Vn: AA				Vt: a				Action: AA -> @
+  Vn: AA				Vt: @				Action: scan
+  Vn: AA				Vt: +				Action: AA ->   +   TT   AA 
+  Vn: AA				Vt: *				Action: scan
+  Vn: AA				Vt: (				Action: scan
+  Vn: AA				Vt: )				Action: AA -> @
+  Vn: AA				Vt: i				Action: scan
+  Vn: AA				Vt: $				Action: AA -> @
+4
+  Vn: TT				Vt: a				Action: pop
+  Vn: TT				Vt: @				Action: scan
+  Vn: TT				Vt: +				Action: pop
+  Vn: TT				Vt: *				Action: scan
+  Vn: TT				Vt: (				Action: TT ->   FF   BB 
+  Vn: TT				Vt: )				Action: pop
+  Vn: TT				Vt: i				Action: TT ->   FF   BB 
+  Vn: TT				Vt: $				Action: pop
+5
+  Vn: BB				Vt: a				Action: BB -> @
+  Vn: BB				Vt: @				Action: scan
+  Vn: BB				Vt: +				Action: BB -> @
+  Vn: BB				Vt: *				Action: BB ->   *   FF   BB 
+  Vn: BB				Vt: (				Action: scan
+  Vn: BB				Vt: )				Action: BB -> @
+  Vn: BB				Vt: i				Action: scan
+  Vn: BB				Vt: $				Action: BB -> @
+6
+  Vn: FF				Vt: a				Action: pop
+  Vn: FF				Vt: @				Action: scan
+  Vn: FF				Vt: +				Action: pop
+  Vn: FF				Vt: *				Action: pop
+  Vn: FF				Vt: (				Action: FF ->   (   EE   ) 
+  Vn: FF				Vt: )				Action: pop
+  Vn: FF				Vt: i				Action: FF ->   i 
+  Vn: FF				Vt: $				Action: pop

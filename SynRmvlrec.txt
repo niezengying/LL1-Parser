@@ -1,0 +1,10 @@
+EE -> TT AA EE' $
+EE' -> a EE' $
+EE' -> @ $
+AA -> + TT AA $
+AA -> @ $
+TT -> FF BB $
+BB -> * FF BB $
+BB -> @ $
+FF -> ( EE ) $
+FF -> i $

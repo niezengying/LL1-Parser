@@ -1,0 +1,8 @@
+void main(void)
+{
+	int i;
+	int j;  
+	if(i>j) putout (i);
+	else	
+	else putout (j);/*an extra else */
+}vsd

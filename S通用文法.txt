@@ -1,0 +1,6 @@
+@
+EE -> TT AA | EE a
+AA -> + TT AA | @
+TT -> FF BB
+BB -> * FF BB | @
+FF -> ( EE ) | i

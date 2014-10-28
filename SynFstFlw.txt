@@ -1,0 +1,17 @@
+各非终结符first集合如下：
+First( EE ) = { ( i }
+First( EE' ) = { a @ }
+First( AA ) = { + @ }
+First( TT ) = { ( i }
+First( BB ) = { * @ }
+First( FF ) = { ( i }
+
+
+各非终结符follow集合如下：
+Follow ( EE ) = { $ ) }
+Follow ( EE' ) = { $ ) }
+Follow ( AA ) = { a $ ) }
+Follow ( TT ) = { + a $ ) }
+Follow ( BB ) = { + a $ ) }
+Follow ( FF ) = { * + a $ ) }
+

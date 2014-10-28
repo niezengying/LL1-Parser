@@ -1,0 +1,38 @@
+LL(1)分析树如下所示：
+
+1 EE 
+   2 TT 
+      3 FF 
+         4 ( 
+         4 EE 
+            5 TT 
+               6 FF 
+                  7 i 
+               6 BB 
+            5 AA 
+               6 + 
+               6 TT 
+                  7 FF 
+                     8 i 
+                  7 BB 
+                     8 * 
+                     8 FF 
+                        9 i 
+                     8 BB 
+                        9 * 
+                        9 FF 
+                        9 BB 
+                           10 * 
+                           10 FF 
+                              11 i 
+                           10 BB 
+                              11 * 
+                              11 FF 
+                                 12 i 
+                              11 BB 
+               6 AA 
+            5 EE' 
+         4 ) 
+      3 BB 
+   2 AA 
+   2 EE' 
